@@ -45,13 +45,13 @@ world_pop <- world_pop %>%
 # Summer of the most recent year. Sentinel-2 with the Cloud Score + cloudmask.
 
 
-lst <- rast(here(city_folder, "lst", "lst_p95_2022-01-22_1.tif")) %>% 
+lst <- rast("https://wri-cities-heat.s3.us-east-1.amazonaws.com/index/lst_p95_2022-01-22_1.tif") %>% 
   project(utm$wkt) %>% 
   crop(aoi) 
-alb <- rast(here(city_folder, "albedo", "albedo_2024_1.tif")) %>% 
+alb <- rast("https://wri-cities-heat.s3.us-east-1.amazonaws.com/index/albedo_2024_1.tif") %>% 
   project(utm$wkt) %>% 
   crop(aoi)
-fr <- rast(here(city_folder, "fr", "Fr-ZAF-Cape_Town-aoi.tif")) %>% 
+fr <- rast("https://wri-cities-heat.s3.us-east-1.amazonaws.com/index/Fr-ZAF-Cape_Town-aoi.tif") %>% 
   project(utm$wkt) %>% 
   crop(aoi)
 tree <- rast("https://wri-cities-tcm.s3.us-east-1.amazonaws.com/city_projects/ZAF-Cape_Town/OLD-business_district/scenarios/baseline/baseline/tile_00001/ccl_layers/tree-cover__baseline__baseline.tif") %>% 
