@@ -3,6 +3,7 @@ library(tidyverse)
 library(terra)
 library(sf)
 library(glue)
+library(patchwork)
 
 
 # City
