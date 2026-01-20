@@ -34,15 +34,15 @@ world_pop <- world_pop %>%
 # used for proof of concept. They should not need reprojecting because they are
 # all coming from CIF.
 
-# Example for LST calculation: https://code.earthengine.google.com/1d299d1858f44d739b6f51e9c58f0dcc
-# Hot season defined as the three month window centered on the hottest day from 
-# ERA5. Use Landsat surface temperature (B10) for the most recent three hot seasons 
+# Example for LST calculation: https://code.earthengine.google.com/?scriptPath=users%2Felizabethjanewesley%2Fheat-resilient-infrastructure%3Asurface-characteristics%2Fhot-season-LST-function
+# Hot season defined as the three month window centered on the hottest day from
+# ERA5. Use Landsat surface temperature (B10) for the most recent three hot seasons
 # and calculate the pixel-wise 95th percentiles.
 
-# Example for albedo calculation: https://code.earthengine.google.com/f70f25a5f7409f00dbd34b04f713a578
+# Example for albedo calculation: https://code.earthengine.google.com/?scriptPath=users%2Felizabethjanewesley%2Fheat-resilient-infrastructure%3Asurface-characteristics%2Fsummer-albedo-function
 # Summer of the most recent year. Sentinel-2 with the Cloud Score + cloudmask.
 
-# Example for Fr calculation: https://code.earthengine.google.com/e92a72a8d770db96d9ed7e50ebd8fffc
+# Example for Fr calculation: https://code.earthengine.google.com/?scriptPath=users%2Felizabethjanewesley%2Fheat-resilient-infrastructure%3Asurface-characteristics%2Fsummer-Fr-function
 # Summer of the most recent year. Sentinel-2 with the Cloud Score + cloudmask.
 
 
