@@ -126,10 +126,10 @@ normalize_percentile <- function(r, probs = seq(0, 1, by = 0.01)) {
   )
 }
 
-# Categorize into 6 levels
+# Categorize into 5 levels
 cat5_from_01 <- function(x) {
   
-  # convert 0–1 to 1–6
+  # convert 0–1 to 1–5
   y <- ceiling(x * 5)
   
   # handle edge case where x == 0
@@ -151,19 +151,17 @@ alb_p_v  <- 1 - alb_p
 tree_p_v <- 1 - tree_p
 fr_p_v   <- 1 - fr_p
 
-# Categorize each input layer into 6 classes
-lst_p_cat  <- cat5_from_01(lst_p)
-pop_p_cat  <- cat5_from_01(pop_p)
-
-alb_p_cat  <- cat5_from_01(alb_p_v)
-tree_p_cat <- cat5_from_01(tree_p_v)
-fr_p_cat   <- cat5_from_01(fr_p_v)
-
 # Combine infrastructure into a single, evenly weighted component
-infra_p_cat <- (alb_p_cat + tree_p_cat + fr_p_cat) / 3
+infra_p <- (alb_p_v + tree_p_v + fr_p_v) / 3
+
+# Sum index components
+index_sum <- lst_p + pop_p + infra_p
+
+# Normalize to percentiles
+index_p <- normalize_percentile(index_sum)
 
 # Final index
-HVI_p <- (lst_p_cat + pop_p_cat + infra_p_cat) / 3
+HVI_p_cat <- cat5_from_01(index_p)
 
 
 
