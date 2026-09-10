@@ -32,19 +32,19 @@ cat5_from_01 <- function(x) {
 s3_path = "https://wri-cities-data-api.s3.us-east-1.amazonaws.com/data/dev"
 
 # city id
-city_name <- "ZAF-Cape_Town"
+city_name <- "CHN-Chengdu"
 
 ############ GEt data 
 # world_pop
-world_pop <- rast(glue("{s3_path}/WorldPop/cog/{city_name}__urban_extent__WorldPop__StartYear_2020_EndYear_2020.tif"))
+world_pop <- rast(glue("{s3_path}/WorldPop/cog/{city_name}__urban_extent__WorldPop__Version_2__StartYear_2020_EndYear_2020.tif"))
 # lst
-lst <- rast(glue("https://wri-cities-data-api.s3.us-east-1.amazonaws.com/data/dev/HighLandSurfaceTemperature/cog/{city_name}__urban_extent__HighLandSurfaceTemperatureIndex__StartYear_2023_EndYear_2025.tif"))
+lst <- rast(glue("https://wri-cities-data-api.s3.us-east-1.amazonaws.com/data/dev/HighLandSurfaceTemperatureIndex/cog/{city_name}__urban_extent__HighLandSurfaceTemperatureIndex__StartYear_2023_EndYear_2025.tif"))
 # alb
-alb <- rast(glue("{s3_path}/AlbedoCloudMasked__ZonalStats_median__NumSeasons_3/cog/{city_name}__urban_extent__AlbedoCloudMaskedIndex__2026.tif"))
+alb <- rast(glue("{s3_path}/AlbedoCloudMaskedIndex/cog/{city_name}__urban_extent__AlbedoCloudMaskedIndex__2026.tif"))
 # fr
-fr <- rast(glue("{s3_path}/FractionalVegetationPercent/cog/{city_name}__urban_extent__FractionalVegetationPercentIndex__StartYear_2025_EndYear_2025.tif"))
+fr <- rast(glue("{s3_path}/FractionalVegetationPercentIndex/cog/{city_name}__urban_extent__FractionalVegetationPercentIndex__StartYear_2025_EndYear_2025.tif"))
 # tree
-tree <- rast(glue("{s3_path}/TreeCanopyCoverMask/cog/{city_name}__urban_extent__TreeCanopyCoverMaskIndex__2020.tif"))
+tree <- rast(glue("{s3_path}/TreeCanopyCoverMaskIndex/cog/{city_name}__urban_extent__TreeCanopyCoverMaskIndex__2020.tif"))
 
 ############# process data
 # Normalize to percentiles (0–1)
